@@ -415,7 +415,7 @@ function run_citation_legisworks(cite, is_top_level, callback) {
     var body;
     try {
       body = fs.readFileSync("legisworks-historical-statutes/data/" + pad(volume, 3) + ".yaml")
-      body = yaml.safeLoad(body);
+      body = yaml.load(body);
     } catch (e) {
       return;
     }
@@ -585,7 +585,7 @@ function run_legisworks_publaw(citation, is_top_level, new_parallel_cites, env, 
 
     // Get the YAML file for the volume.
     var body = fs.readFileSync("legisworks-historical-statutes/data/" + pad(volume, 3) + ".yaml")
-    body = yaml.safeLoad(body);
+    body = yaml.load(body);
 
     body.forEach(function(item) {
       if (""+item.congress != citation.law.congress)
