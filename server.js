@@ -103,12 +103,15 @@ if (env.debug)
 
 // routes
 app.route('/citation/find').get(ajax_route).post(ajax_route);
-app.route('/citation/*').get(direct_route).post(direct_route);
+app.route(/^[\/]citation[\/]/).get(direct_route).post(direct_route);
 
 
 // boot it up!
 var port = env.port || 3000;
-app.listen(port, function() {
+app.listen(port, (error) => {
+  if (error) {
+    console.log(error)
+  }
   console.log("Express server listening on port %s in %s mode", port, env.debug ? "debug" : "release");
 });
 
