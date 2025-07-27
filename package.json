@@ -21,13 +21,13 @@
   },
   "dependencies": {
     "async": "*",
-    "buffer-replace": "^1.0.0",
+    "buffer-replace": "^2.0.0",
     "errorhandler": "^1.5.1",
     "express": "^5.1.0",
-    "forever": "^1.0.1",
+    "forever": "^4.0.3",
     "js-yaml": "^4.1.0",
     "request": "^2.88.2",
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.6.2"
   },
   "engines": {
     "node": ">=22.0.0"
